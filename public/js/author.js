@@ -3,9 +3,11 @@ $(document).ready(function() {
   var nameInput = $("#author-name");
   var authorList = $("tbody");
   var authorContainer = $(".author-container");
+ 
   // Adding event listeners to the form to create a new object, and the button to delete
   // an Author
-  $(document).on("submit", "#author-form", handleAuthorFormSubmit);
+  $(document).on("submit","#submit" ,"#author-form", handleAuthorFormSubmit);
+  console.log(handleAuthorFormSubmit)
   $(document).on("click", ".delete-author", handleDeleteButtonPress);
 
   // Getting the initial list of Authors
@@ -14,6 +16,30 @@ $(document).ready(function() {
   // A function to handle what happens when the form is submitted to create a new Author
   function handleAuthorFormSubmit(event) {
     event.preventDefault();
+    nameValue = epicNickName.val()
+    var gamer = {};
+    gamer.epicNickName = epicNickName.val().toLowerCase();
+    gamer.platformDropDownBtn = selectedOption;
+  
+    console.log(gamer);
+  
+    $.post("/api/new", gamer).then(function(data, err){
+        if (err) throw err
+        console.log(data);
+    }).then(function(res){
+        console.log('response received')
+        displayData();
+        // resetResult();
+    })
+  
+  platformDropDownBtn.click(function(){
+    dropDownValue = $(this).text();
+  });
+  
+  function resetResult(){
+    // results.html('');
+    epicNickName.val('');
+  }
     // Don't do anything if the name fields hasn't been filled out
     if (!nameInput.val().trim().trim()) {
       return;
@@ -92,3 +118,50 @@ $(document).ready(function() {
       .then(getAuthors);
   }
 });
+
+// code from clark's FortniteTracker.js
+ // clark's variables
+ var submitBtn = $('#submit');
+ var platformDropDownBtn = $('#platform a');
+ var epicNickName = $('#epicNickName');
+ var results = $('#results');
+ var selectedOption = "";
+ // default Value
+ var nameValue = "";
+
+platformDropDownBtn.click(function(e){
+  e.preventDefault();
+  selectedOption = $(this).text();
+  console.log(selectedOption);
+})
+
+
+
+// submitBtn.click(function(){
+//   nameValue = epicNickName.val()
+//   var gamer = {};
+//   gamer.epicNickName = epicNickName.val().toLowerCase();
+//   gamer.platformDropDownBtn = selectedOption;
+
+//   console.log(gamer);
+
+//   $.post("/api/new", gamer).then(function(data, err){
+//       if (err) throw err
+//       console.log(data);
+//   }).then(function(res){
+//       console.log('response received')
+//       displayData();
+//       // resetResult();
+//   })
+
+
+
+// });
+// platformDropDownBtn.click(function(){
+//   dropDownValue = $(this).text();
+// });
+
+// function resetResult(){
+//   // results.html('');
+//   epicNickName.val('');
+// }

@@ -87,6 +87,28 @@ $(document).ready(function() {
       "margin-top":
       "-10px"
     });
+    var statsTable = $("<table>");
+
+    var statsTableHead = $("<thead>");
+    statsTable.append(statsTableHead);
+
+    var statsTableHeadings = $("<tr>");
+    statsTableHeadings.append("<th>WINS</th>");
+    statsTableHeadings.append("<th>WIN %</th>");
+    statsTableHeadings.append("<th>KILLS</th>");
+    statsTableHeadings.append("<th>K/D</th>");
+    statsTableHead.append(statsTableHeadings);
+
+    var statsTableBody = $("<tbody>");
+    statsTable.append(statsTableBody);
+
+    var statsTableValues = $("<tr>");
+    statsTableValues.append("<td>" + post.Author.wins + "</td");
+    statsTableValues.append("<td>" + post.Author.winPercentage + "</td");
+    statsTableValues.append("<td>" + post.Author.kills + "</td");
+    statsTableValues.append("<td>" + post.Author.kD + "</td");
+    statsTableBody.append(statsTableValues);
+
     var newPostCardBody = $("<div>");
     newPostCardBody.addClass("card-body");
     var newPostBody = $("<p>");
@@ -100,6 +122,7 @@ $(document).ready(function() {
     newPostCardHeading.append(newPostAuthor);
     newPostCardBody.append(newPostBody);
     newPostCard.append(newPostCardHeading);
+    newPostCard.append(statsTable);
     newPostCard.append(newPostCardBody);
     newPostCard.data("post", post);
     return newPostCard;

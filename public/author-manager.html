@@ -14,76 +14,47 @@
 <body>
 	<div class="container">
 		<div class="row mt-4">
+      <div class="col-md-2 col-sm-2">
+		<a href="/blog" class="button">Shady Servers</a>
+      </div>
 			<div class="col-md-2 col-sm-2">
-				<a href="/blog" class="button">Shady Servers</a>
-			</div>
-			<div class="col-md-2 col-sm-2">
-				<a href="/cms" class="button">New Post</a>
+		<a href="/cms" class="button">New Post</a>
+      </div>
+	</div>
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="author-container">
+					<h1>Authors</h1>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th># of Posts</th>
+								<th>See Author's Posts</th>
+								<th>New Post</th>
+								<th>Delete Author</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="form-row">
+								<form id="author-form">
+									<td colspan="4">
+										<input placeholder="Enter a name" id="author-name" type="text" />
+									</td>
+									<td><button type="submit" class="btn btn-success">Create Author</button>
+									</td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
 			</div>
 		</div>
-		<div class="jumbotron">
-			<div class="row">
-				<div class="col-md-8 offset-md-2">
-					<div class="author-container">
-						<h1>Authors</h1>
-						<table class="table table-striped">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th># of Posts</th>
-									<th>See Author's Posts</th>
-									<th>New Post</th>
-									<th>Delete Author</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr id="form-row">
-									<form id="author-form">
-										<td colspan="4">
-											<div class="input-group">
-												<input type="text" id="epicNickName" class="form-control"
-													aria-label="Text input with segmented dropdown button">
-												<div class="input-group-append">
-													<button type="submit" id="submit"
-														class="btn btn-success">Submit</button>
-														<!-- everything below here is a dropdown for choosing console -->
-													<button type="button"
-														class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
-														data-toggle="dropdown" aria-haspopup="true"
-														aria-expanded="false">
-														<span class="sr-only">Toggle Dropdown</span>
-													</button>
-													<div class="dropdown-menu" id="platform">
-														<a value="pc" class="dropdown-item" href="#">pc</a>
-														<a value="xb1" class="dropdown-item" href="#">xbl</a>
-														<a value="psn" class="dropdown-item" href="#">psn</a>
-													</div>
-												</div>
-
-										</td>
-										<!-- <td><button type="submit" class="btn btn-success">Create Author</button> -->
-										</td>
-									</form>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
+	</div>  
 		</div>
 		</d>
 		<!-- Custom Script -->
 		<script src="js/author.js" type="text/javascript"></script>
-
-		<script src="https://code.jquery.com/jquery-3.3.1.js"
-			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-			crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"
-			integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp"
-			crossorigin="anonymous"></script>
-		<script src="fortniteTracker.js"></script>
 
 </body>
 

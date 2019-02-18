@@ -5,6 +5,7 @@ body {
 .jumbotron {
   background-image: url("llama\ attempt.png");
   background-size: cover;
+  margin-bottom: 0px
 }
 
 button.submit {
@@ -382,3 +383,4 @@ button.edit {
   z-index: 0;
 }
 /*  */
+/* stat holder */
